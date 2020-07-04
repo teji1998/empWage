@@ -1,24 +1,26 @@
 import java.util.Random;
 public class EmpWage{
 	static final int ratePerHour=20;
-	public void getWelcomeMessage(){
-		System.out.println("Welcome to the employee wage computation");
-	}
+	static final int fullTime=1;
+	static final int partTime=2;
 	public void getDailyWage(){
 	Random random = new Random();
 	int empHour=0;
-	int empCheck=random.nextInt(2);
-	if(empCheck==1){
+	int empCheck=random.nextInt(3);
+	if(empCheck==fullTime){
 		empHour=8;
 		}
+	else if(empCheck==partTime){
+		empHour=4;
+	 }
 	else{
 		empHour=0;
 		}
+	System.out.println("Employee hours is " +empHour);
 	System.out.println("Daily Wage="+(empHour*EmpWage.ratePerHour));
 	}
 	public static void main(String[] args){
-	EmpWage message =new EmpWage();
-	message.getWelcomeMessage();
+	System.out.println("Welcome to the Employee Wage Computation");
 	EmpWage dailywage = new EmpWage();
 	dailywage.getDailyWage();
 	}
